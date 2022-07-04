@@ -40,11 +40,11 @@ export function ItemListContainer() {
                 <div className="card-body">
                     <h4 className="card-title">PALACE 6050</h4>
                     <p className="card-text">Amplitud y lujo son sinónimos de esta casa. Al recorrer la plata inferior, descubrimos un funcional estar comedor conectado con una gran cocina con barra desayunadora. </p>
-                    <ItemCount stock="10" initial="1"/>
+                    <ItemCount stock="10"initial="1"/>
                 </div>
             </div>
 
-            <div class="card " >
+            <div className="card " >
                 <img src="./imagenes/casa17.jpg" className="card-img-top imagen" alt="ropa"/>
                 <div className="card-body">
                     <h4 className="card-title">PALACE 5010</h4>

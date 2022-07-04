@@ -1,13 +1,13 @@
 import './App.css';
 import { Header } from './components/Header';
-import { ItemListContainer } from './components/ItemListContainet';
+import { ItemList } from './components/ItemList';
 
 
 function App() {
   return (
     <div>
       <Header/>
-      <ItemListContainer/>
+      <ItemList/>
     </div>
     
   );
