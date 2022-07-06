@@ -1,15 +1,15 @@
-import { useState } from "react"
 
-export function Item (ident, nombre,precio,link,descripcion){
+
+export function Item ({products}){
 
     return(
 
-        <div className="card " id={ident+nombre}>
-                <img src={link} className="card-img-top imagen" alt="ropa"/>
+        <div className="card" id={products.id+products.nombre}>
+                <img src={products.link} className="card-img-top imagen" alt="ropa"/>
                 <div className="card-body">
-                    <h4 className="card-title">{nombre}</h4>
-                    <h5>{precio}</h5>
-                    <p className="card-text">{descripcion}</p>
+                    <h4 className="card-title">{products.nombre}</h4>
+                    <h5>{products.precio}</h5>
+                    <p className="card-text">{products.descripcion}</p>
                 </div>
         </div>
     )

@@ -15,7 +15,7 @@ export function ItemList() {
 
     
 
-    const [products, setProducts]= useState([])
+    const [productos, setProductos]= useState([])
 
     const promesa = new Promise((res,rej)=>{
         setTimeout(()=>{
@@ -26,7 +26,7 @@ export function ItemList() {
 
     useEffect(()=>{
         promesa.then((data)=>{
-            setProducts(data)
+            setProductos(data)
             
         }).catch(()=>{
             console.log("Algo salio mal")
@@ -36,7 +36,7 @@ export function ItemList() {
     return (
         <section className="cuerpo">
 
-            {products.map((product) => <Item key={product.id} ident={product.id} nombre={product.nombre} precio={product.precio} link={product.link} descripcion={product.descripcion}/> )}
+            {productos.map((product) => <Item key={product.id} products={product}/> )}
             
 
         </section>
