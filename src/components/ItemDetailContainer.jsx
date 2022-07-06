@@ -1,9 +1,9 @@
 import { useEffect,useState } from "react"
-import { Item } from "./Item"
+import { ItemDetail } from "./ItemDetail"
 
-export function ItemList() {
+export function ItemDetailContainer(ItemId) {
 
-    const [productos, setProductos]= useState([])
+    const [producto, setProducto]= useState([])
 
     useEffect(()=>{
         fetch("/products.json")
@@ -21,16 +21,13 @@ export function ItemList() {
             producto.genero = genero.toUpperCase();
             producto.ventas = ventas;
             })
-            setProductos(data)
+            setProducto(data).filter(producto => (producto.id == ItemId))
         }) 
     },[])
 
     return (
-        <section className="cuerpo">
-            
-            {productos.map((producto)=> <Item key={producto.id} productoProps={producto}></Item>)}
-
-        </section>
+        
+        <ItemDetail productDetail={producto}/>
         
     )
 }

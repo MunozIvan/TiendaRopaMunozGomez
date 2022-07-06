@@ -10,12 +10,6 @@
   border-right: 0px;
 }
 
-.slash{
-  border-style: solid;
-  border-bottom: 5px;
-  border-color: lightgrey;
-}
-
 .searchBar{
   width: 13vw;
 
@@ -44,5 +38,26 @@ header{
   text-decoration: none;
   color: black;
 }
+
+.cuerpo{/*
+  display: grid;
+  grid-template-columns: 15vw 15vw 15vw;
+  grid-template-rows: 25vw 25vw 25vw 25vw 25vw 25vw;
+  column-gap: 1.5vw;*/
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1.5vw;
+  justify-content: space-between;
+}
+
+.producto{
+  display: inline;
+  height: 37vw;
+  width: 23vw;
+  border-radius: 2px;
+
+}
+
+
 
 

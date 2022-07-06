@@ -1,5 +1,5 @@
 import { ItemCount } from "./ItemCount"
-
+/*OBSOLETO*/
 
 
 export function ItemListContainer() {

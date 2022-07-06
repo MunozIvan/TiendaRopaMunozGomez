@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "modelo" : "Versace La Greca",
+        "marca" : "Versace",
+        "precio" : 184300,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceLaGareca.png",
+        "foto1" : "/images/VersaceLaGareca1.png",
+        "genero" : "hombre",
+        "ventas" : 521
+    },
+    {
+        "id": 2,
+        "modelo" : "Versace Jersey Barroco",
+        "marca" : "Versace",
+        "precio" : 184300,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceBarroco.png",
+        "foto1" : "/images/VersaceBarroco1.png",
+        "genero" : "hombre",
+        "ventas" : 134
+    },
+    {
+        "id": 3,
+        "modelo" : "Versace Blazer Seda",
+        "marca" : "Versace",
+        "precio" : 435900,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceBlazerSeda.png",
+        "foto1" : "/images/VersaceBlazerSeda1.png",
+        "genero" : "mujer",
+        "ventas" : 543
+    },
+    {
+        "id": 4,
+        "modelo" : "Versace Medusa Cristales",
+        "marca" : "Versace",
+        "precio" : 200300,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceMedusaMujer.png",
+        "foto1" : "/images/VersaceMedusaMujer1.png",
+        "genero" : "mujer",
+        "ventas" : 134
+    },
+    {
+        "id": 5,
+        "modelo" : "Versace Medusa Biggie",
+        "marca" : "Versace",
+        "precio" : 117000,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceMedusaBiggie.png",
+        "foto1" : "/images/VersaceMedusaBiggie1.png",
+        "genero" : "hombre",
+        "ventas" : 156
+    },
+    {
+        "id": 6,
+        "modelo" : "Versace Vestido Barroco",
+        "marca" : "Versace",
+        "precio" : 311400,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceVestidoBarroco.png",
+        "foto1" : "/images/VersaceVestidoBarroco1.png",
+        "genero" : "mujer",
+        "ventas" : 178
+    },
+    {
+        "id": 7,
+        "modelo" : "Versace Dream",
+        "marca" : "Versace",
+        "precio" : 267600,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceDream.png",
+        "foto1" : "/images/VersaceDream1.png",
+        "genero" : "mujer",
+        "ventas" : 423
+    },
+    {
+        "id": 8,
+        "modelo" : "Versace Parka Medusa",
+        "marca" : "Versace",
+        "precio" : 436700,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceParka.png",
+        "foto1" : "/images/VersaceParka1.png",
+        "genero" : "mujer",
+        "ventas" : 764
+    }
+    
+    
+]
