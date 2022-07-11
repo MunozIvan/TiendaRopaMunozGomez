@@ -8,6 +8,7 @@
         "foto" : "/images/VersaceLaGareca.png",
         "foto1" : "/images/VersaceLaGareca1.png",
         "genero" : "hombre",
+        "tipo" : "buzo",
         "ventas" : 521
     },
     {
@@ -19,6 +20,7 @@
         "foto" : "/images/VersaceBarroco.png",
         "foto1" : "/images/VersaceBarroco1.png",
         "genero" : "hombre",
+        "tipo" : "buzo",
         "ventas" : 134
     },
     {
@@ -30,6 +32,7 @@
         "foto" : "/images/VersaceBlazerSeda.png",
         "foto1" : "/images/VersaceBlazerSeda1.png",
         "genero" : "mujer",
+        "tipo" : "vestido",
         "ventas" : 543
     },
     {
@@ -41,6 +44,7 @@
         "foto" : "/images/VersaceMedusaMujer.png",
         "foto1" : "/images/VersaceMedusaMujer1.png",
         "genero" : "mujer",
+        "tipo" : "remera",
         "ventas" : 134
     },
     {
@@ -52,6 +56,7 @@
         "foto" : "/images/VersaceMedusaBiggie.png",
         "foto1" : "/images/VersaceMedusaBiggie1.png",
         "genero" : "hombre",
+        "tipo" : "buzo",
         "ventas" : 156
     },
     {
@@ -63,6 +68,7 @@
         "foto" : "/images/VersaceVestidoBarroco.png",
         "foto1" : "/images/VersaceVestidoBarroco1.png",
         "genero" : "mujer",
+        "tipo" : "vestido",
         "ventas" : 178
     },
     {
@@ -74,6 +80,7 @@
         "foto" : "/images/VersaceDream.png",
         "foto1" : "/images/VersaceDream1.png",
         "genero" : "mujer",
+        "tipo" : "buzo",
         "ventas" : 423
     },
     {
@@ -85,7 +92,68 @@
         "foto" : "/images/VersaceParka.png",
         "foto1" : "/images/VersaceParka1.png",
         "genero" : "mujer",
+        "tipo" : "abrigo",
         "ventas" : 764
+    },
+    {
+        "id": 9,
+        "modelo" : "Versace Mochila Greca",
+        "marca" : "Versace",
+        "precio" : 210400,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceMochilaGreca.png",
+        "foto1" : "/images/VersaceMochilaGreca1.png",
+        "genero" : "hombre",
+        "tipo" : "accesorios",
+        "ventas" : 76
+    },
+    {
+        "id": 10,
+        "modelo" : "LV Squad",
+        "marca" : "Louis Vuitton",
+        "precio" : 130000,
+        "cantidad" : 50,
+        "foto" : "/images/LouisSquad.png",
+        "foto1" : "/images/LouisSquad1.png",
+        "genero" : "mujer",
+        "tipo" : "zapatos",
+        "ventas" : 753
+    },
+    {
+        "id": 11,
+        "modelo" : "LV Bolsa Soft Trunk",
+        "marca" : "Louis Vuitton",
+        "precio" : 179000,
+        "cantidad" : 50,
+        "foto" : "/images/LouisBolsaSoftTrunk.png",
+        "foto1" : "/images/LouisBolsaSoftTrunk1.png",
+        "genero" : "hombre",
+        "tipo" : "accesorios",
+        "ventas" : 123
+    },
+    {
+        "id": 12,
+        "modelo" : "Gucci Mochila Ophidia",
+        "marca" : "Gucci",
+        "precio" : 179000,
+        "cantidad" : 50,
+        "foto" : "/images/GucciMochilaOphidia.png",
+        "foto1" : "/images/GucciMochilaOphidia1.png",
+        "genero" : "hombre",
+        "tipo" : "accesorios",
+        "ventas" : 123
+    },
+    {
+        "id": 13,
+        "modelo" : "Versace Cartera La Greca",
+        "marca" : "Versace",
+        "precio" : 82500,
+        "cantidad" : 50,
+        "foto" : "/images/VersaceCarteraLaGreca.png",
+        "foto1" : "/images/VersaceCarteraLaGreca1.png",
+        "genero" : "hombre",
+        "tipo" : "accesorios",
+        "ventas" : 123
     }
     
     

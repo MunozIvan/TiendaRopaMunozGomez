@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 import { SearchBar } from "./SearchBar";
 import {Handbag, Person} from "react-bootstrap-icons"
 
@@ -10,8 +10,7 @@ export function HeaderTop() {
             <SearchBar/>
             <img src="#!" alt="logotipo"/>
             <div id="iconos">
-                <a href="#" ><Person className="icono" size={25}/></a>
-                <a href="#" ><Handbag className="icono" size={25}/></a>  
+                <Link to={"/carrito"} ><Handbag className="icono" size={25}/></Link>  
             </div>
         </div>
     )

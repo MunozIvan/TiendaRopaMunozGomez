@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 
 function Navbar() {
     return (
@@ -8,27 +8,27 @@ function Navbar() {
               <ul className="navbar-nav ">
                 <li  className="nav-item">
                   <h5>
-                    <a  className="nav-link" href="#!">Novedades</a>
+                    <Link  className="nav-link" to={"/"}>Novedades</Link>
                   </h5>
                 </li>
                 <li className="nav-item">
                   <h5>
-                    <a  className="nav-link" href="#!">Mujeres</a>
+                    <Link  className="nav-link" to={"/categoria/mujer"}>Mujer</Link>
                   </h5>
                 </li>
                 <li className="nav-item">
                   <h5>
-                    <a  className="nav-link" href="#!">Hombres</a>
+                    <Link  className="nav-link" to={"/categoria/hombre"}>Hombre</Link>
                   </h5>
                 </li>
                 <li className="nav-item">
                   <h5>
-                    <a  className="nav-link" href="#!">Joyería</a>
+                    <Link  className="nav-link" to={"/categoria/accesorios"}>Accesorios</Link>
                   </h5>
                 </li> 
                 <li className="nav-item">
                   <h5>
-                    <a  className="nav-link" href="#!">Acerca de nosotros</a>
+                    <Link  className="nav-link" to={"/acerca_de_nosotros"}>Acerca de nosotros</Link>
                   </h5>
                 </li> 
               </ul>
