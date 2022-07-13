@@ -1,6 +1,11 @@
-
+import { ItemCount } from "./ItemCount"
 
 export function ItemDetail({productDetail}){
+
+    const onAdd=(cantidad)=>{
+        productDetail.stock = productDetail.stock - cantidad
+    }
+
     return(
         <div className="card productoDetail" id={`${productDetail.tipo}${productDetail.id}`}>
                 <img src={productDetail.foto} className="card-img-top imagen" alt="ropa"/>
@@ -10,6 +15,8 @@ export function ItemDetail({productDetail}){
                     <h5>{productDetail.precio}</h5>
                     <p className="card-text">{productDetail.descripcion}</p>
                 </div>
+                <ItemCount product={productDetail} agregarAlCarrito={onAdd}/>
         </div>
+
     )
 }

@@ -1,22 +1,21 @@
 import { useState } from "react"
 import {Dash, Plus} from "react-bootstrap-icons"
+import { Link } from "react-router-dom";
 
-export function ItemCount(stock, initial){ 
+export function ItemCount({product,agregarAlCarrito}){ 
     
-    const [contador, SetContador]= useState(initial)
+    const [contador, SetContador]= useState(1)
 
     const añadirProducto= () =>{
-        if(contador<stock){
+        if(contador<product.stock){
             SetContador(contador+1)
-            console.log(contador.value)
         }
     }
     const quitarProducto = () =>{
-        if(contador===1){
+        if(contador==1){
         }
         else{
             SetContador(contador-1)
-            console.log(contador)
         }
     }
 
@@ -28,10 +27,15 @@ export function ItemCount(stock, initial){
 
                     <div className="card " >
                         <button onClick={quitarProducto}><Dash className="icono" size={25}/> </button>
-                        <div>dada</div>
+                        <div className="contador">{contador}</div>
                         <button onClick={añadirProducto} ><Plus className="icono" size={25}/> </button>
+                        <h4 className="disponibles"></h4>
                     </div>
-                    <button type="button" className="btn btn-outline-primary">Comprar</button>
+                    <button type="button" onClick={agregarAlCarrito} className="btn btn-outline-primary">
+                        <Link to={`/cart`}>
+                            Comprar
+                        </Link>
+                    </button>
                 </div>
         </div>
 
