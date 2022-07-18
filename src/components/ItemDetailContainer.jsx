@@ -4,7 +4,7 @@ import { ItemDetail } from "./ItemDetail"
 
 export function ItemDetailContainer() {
 
-    const [producto, setProducto]= useState([])
+    const [productoDetail, setProductoDetail]= useState({})
     const {itemId} = useParams()
 
     useEffect(()=>{
@@ -23,15 +23,17 @@ export function ItemDetailContainer() {
             producto.genero = genero.toUpperCase();
             producto.tipo = tipo.toUpperCase();
             producto.ventas = ventas;
+            if(producto.id==parseInt(itemId)){
+                setProductoDetail(producto)
+            }
             })
-            setProducto(data.filter((product) => (product.id == parseInt(itemId)) )) 
-            console.log(producto)   //Cuando guardo el archivo, se guarda el producto pero luego es una lista vacía
+            console.log(productoDetail)   //Cuando guardo el archivo, se guarda el producto pero luego es una lista vacía
         }) 
     },[itemId])
 
     return (
         
-        <ItemDetail productDetail={producto}/>
+        <ItemDetail productDetail={productoDetail}/>
         
     )
 }

@@ -55,8 +55,14 @@ header{
   height: 37vw;
   width: 23vw;
   border-radius: 2px;
-
 }
+
+.productoDetail{
+  display: flex;
+  flex-direction: row;
+}
+
+
 
 
 
