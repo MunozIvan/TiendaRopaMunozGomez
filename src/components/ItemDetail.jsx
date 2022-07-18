@@ -1,9 +1,15 @@
 import { ItemCount } from "./ItemCount"
+import React, {useState, createContext} from 'react'
+import { contexo } from "../context/Contexto"
+
+
 
 export function ItemDetail({productDetail}){
 
-    const onAdd=(cantidad)=>{
-        productDetail.stock = productDetail.stock - cantidad
+    const {agregarCarrito} = createContext(contexo)
+
+    function onAdd(contador){
+        agregarCarrito(productDetail.id,contador)
     }
 
     return(//MEJORAR LA VIEW DEL PRODUCTO
