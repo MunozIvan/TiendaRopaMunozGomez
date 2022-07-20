@@ -62,6 +62,15 @@ header{
   flex-direction: row;
 }
 
+.canastaConProductos{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  margin-left: 31vw;
+  margin-right: 31vw;
+  margin-bottom: 1vw;
+}
+
 
 
 

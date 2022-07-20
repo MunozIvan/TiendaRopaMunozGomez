@@ -27,7 +27,6 @@ export function ItemDetailContainer() {
                 setProductoDetail(producto)
             }
             })
-            console.log(productoDetail)   //Cuando guardo el archivo, se guarda el producto pero luego es una lista vacía
         }) 
     },[itemId])
 

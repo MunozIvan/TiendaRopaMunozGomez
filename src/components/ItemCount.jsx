@@ -19,8 +19,11 @@ export function ItemCount({product,agregarAlCarrito}){
         }
     }
 
-    function sumarCarrito(){
-        agregarAlCarrito(product.id,contador)
+    function sumarCarrito(contador){
+        if(contador>0){
+            agregarAlCarrito(contador)    
+        }
+        
     }
 
 
@@ -36,7 +39,7 @@ export function ItemCount({product,agregarAlCarrito}){
                         <h4 className="disponibles"></h4>
                     </div>
                     <button type="button" onClick={sumarCarrito} className="btn btn-outline-primary">
-                        <Link to={`/cart`}>
+                        <Link to={`/carrito`}>
                             Agregar al Carrito
                         </Link>
                     </button>

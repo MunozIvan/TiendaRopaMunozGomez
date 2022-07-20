@@ -8,10 +8,19 @@ export function ComponenteContexto({children}){
 
     const [carrito, setCarrito ]= useState([])
 
-    function agregarCarrito(id,cantidad){
-        while(cantidad>0){
-            //setCarrito(carrito.push())//HACER FETCH PARA BUSCAR ESE ITEM
-            cantidad = cantidad -1
+    function agregarCarrito(productDetail,cantidad){
+        const nuevoProducto = {
+            ...productDetail,
+            cantidad
+        };
+        if(estaEnCarrito(productDetail.id)){
+            const productFind = carrito.find(productDetail => productDetail.id === nuevoProducto.id);
+            const index = carrito.indexOf(productFind);
+            const aux = [...carrito];
+            aux[index].cantidad += cantidad;//aux[index].qty = aux[index].qty + qty;
+            setCarrito(aux);
+          }else{
+            setCarrito([...carrito,nuevoProducto]);//SIRVE setCarrito([carrito.push(newProducto)])
         }
     }
 
@@ -28,15 +37,12 @@ export function ComponenteContexto({children}){
     }
 
     function quitarCarrito(id){
-        carrito.forEach(item=>{
-            if(item.id==id){
-                return true
-            }
-        })
-        return false
+        setCarrito(carrito.filter((product) => product.id != id))
     }
 
-
+    function estaEnCarrito(id){
+        return false
+    }
 
 
     return(

@@ -9,7 +9,8 @@ export function ItemDetail({productDetail}){
     const {agregarCarrito} = createContext(contexo)
 
     function onAdd(contador){
-        agregarCarrito(productDetail.id,contador)
+        agregarCarrito(productDetail,contador)
+        console.log(`se agregaron ${contador} productos`)//CAMBIAR POR SWEETALERT2 O SIMILAR
     }
 
     return(//MEJORAR LA VIEW DEL PRODUCTO
