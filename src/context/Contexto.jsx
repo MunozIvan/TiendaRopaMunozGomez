@@ -1,8 +1,8 @@
 import React, {useState, createContext} from 'react'
 
 
-export const contexo = createContext([])
-const {Provider} = contexo
+export const contexto = createContext([])
+const {Provider} = contexto
 
 export function ComponenteContexto({children}){
 
@@ -20,16 +20,8 @@ export function ComponenteContexto({children}){
             aux[index].cantidad += cantidad;//aux[index].qty = aux[index].qty + qty;
             setCarrito(aux);
           }else{
-            setCarrito([...carrito,nuevoProducto]);//SIRVE setCarrito([carrito.push(newProducto)])
+            setCarrito([...carrito,nuevoProducto]);
         }
-    }
-
-    function quitarCarrito(id){
-        carrito.forEach(item=>{//BUSCAR OTRA LOGICA...
-            if(item.id==id){
-            //QUITAR ITEM //HACER FETCH PARA BUSCAR ESE ITEM
-            }
-        })
     }
 
     function vaciarCarrito(){
@@ -37,16 +29,24 @@ export function ComponenteContexto({children}){
     }
 
     function quitarCarrito(id){
-        setCarrito(carrito.filter((product) => product.id != id))
+        setCarrito(carrito.filter((product) => product.id !== id))
     }
 
     function estaEnCarrito(id){
         return false
     }
 
+    function precioCarrito(carrito){
+        let precioTotal=0
+        carrito.array.forEach(producto => {
+            precioTotal= precioTotal + (producto.precio * producto.cantidad)
+        })
+        return precioTotal
+    }
+
 
     return(
-        <Provider value={{carrito,agregarCarrito,quitarCarrito,vaciarCarrito}}>
+        <Provider value={{carrito,agregarCarrito,quitarCarrito,vaciarCarrito,precioCarrito}}>
             {children}
         </Provider>
         

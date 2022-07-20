@@ -25,7 +25,7 @@ export function Item ({productoProps}){
                     </button>
                 </div>
                 <div className="card-body">
-                    <Link to={`/item/${productoProps.id}`}>
+                    <Link className="icono" to={`/item/${productoProps.id}`}>
                         <h4 className="card-title">{productoProps.modelo}</h4>
                         <h5>${productoProps.precio}</h5>
                     </Link>

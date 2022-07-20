@@ -62,13 +62,26 @@ header{
   flex-direction: row;
 }
 
-.canastaConProductos{
+.carritoConProductos{
   display: flex;
   flex-direction: column;
   gap: 1vw;
   margin-left: 31vw;
   margin-right: 31vw;
   margin-bottom: 1vw;
+}
+
+.carritoVacio{
+  margin-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30vw;
+  margin-right: 30vw;
+}
+
+#resumen{
+  margin-left: 27vw;
+  margin-right: 27vw;
 }
 
 

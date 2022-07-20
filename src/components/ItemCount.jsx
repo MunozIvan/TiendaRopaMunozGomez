@@ -12,7 +12,7 @@ export function ItemCount({product,agregarAlCarrito}){
         }
     }
     const quitarProducto = () =>{
-        if(contador==1){
+        if(contador===1){
         }
         else{
             SetContador(contador-1)
@@ -36,10 +36,10 @@ export function ItemCount({product,agregarAlCarrito}){
                         <button onClick={quitarProducto}><Dash className="icono" size={25}/> </button>
                         <div className="contador">{contador}</div>
                         <button onClick={añadirProducto} ><Plus className="icono" size={25}/> </button>
-                        <h4 className="disponibles"></h4>
+                        <h6 className="disponibles">Disponibles: {product.stock}</h6>
                     </div>
                     <button type="button" onClick={sumarCarrito} className="btn btn-outline-primary">
-                        <Link to={`/carrito`}>
+                        <Link className="icono" to={`/carrito`}>
                             Agregar al Carrito
                         </Link>
                     </button>
