@@ -1,6 +1,8 @@
 import { ItemList } from "./ItemList"
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
+import { db } from "../firebase/firebase"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 
 export function ItemListContainer() {
@@ -9,7 +11,58 @@ export function ItemListContainer() {
     const {categoryName} = useParams()
 
     useEffect(()=>{
+        const productCollection = collection(db, "productos")
+        const qHombre = query(productCollection,where("genero", "==", "hombre"));
+        const qMujer = query(productCollection,where("genero", "==", "mujer"));
+        const qAccesorios = query(productCollection,where("tipo", "==", "accesorios"));
 
+        if(categoryName=="hombre"){
+            getDocs(qHombre).then( result =>{
+                const lista = result.docs.map(doc=>{
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                })
+                setProductos(lista)
+            })
+        }else if(categoryName=="mujer"){
+            getDocs(qMujer).then( result =>{
+                const lista = result.docs.map(doc=>{
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                })
+                setProductos(lista)
+            })
+        }else if(categoryName=="accesorios"){
+            getDocs(qAccesorios).then( result =>{
+                const lista = result.docs.map(doc=>{
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                })
+                setProductos(lista)
+            })
+        }
+        else{
+            getDocs(productCollection).then( result =>{
+                const lista = result.docs.map(doc=>{
+                    return {
+                        id: doc.id,
+                        ...doc.data()}
+                })
+                setProductos(lista)
+            })
+        }
+
+        
+
+
+
+        /*
         if(categoryName){
             fetch("/products.json")
             .then(response => response.json())
@@ -49,7 +102,7 @@ export function ItemListContainer() {
             setProductos(data)
         })
 
-        }
+        }*/
          
     },[categoryName])
 

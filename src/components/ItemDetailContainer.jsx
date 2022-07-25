@@ -1,6 +1,8 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
 import { ItemDetail } from "./ItemDetail"
+import { db } from "../firebase/firebase"
+import { getDoc, collection, doc } from "firebase/firestore"
 
 export function ItemDetailContainer() {
 
@@ -8,6 +10,15 @@ export function ItemDetailContainer() {
     const {itemId} = useParams()
 
     useEffect(()=>{
+
+        const productSCollection = collection(db, "productos");
+        const refDoc = doc(productSCollection,itemId)
+        getDoc(refDoc)
+        .then((result)=>{
+            setProductoDetail(result.data());
+        })
+
+        /*
         fetch("/products.json")
         .then(response => response.json())
         .then(data => {
@@ -27,7 +38,7 @@ export function ItemDetailContainer() {
                 setProductoDetail(producto)
             }
             })
-        }) 
+        }) */
     },[itemId])
 
     return (
