@@ -16,7 +16,7 @@ export function ItemListContainer() {
         const qMujer = query(productCollection,where("genero", "==", "mujer"));
         const qAccesorios = query(productCollection,where("tipo", "==", "accesorios"));
 
-        if(categoryName=="hombre"){
+        if(categoryName==="hombre"){
             getDocs(qHombre).then( result =>{
                 const lista = result.docs.map(doc=>{
                     return {
@@ -26,7 +26,7 @@ export function ItemListContainer() {
                 })
                 setProductos(lista)
             })
-        }else if(categoryName=="mujer"){
+        }else if(categoryName==="mujer"){
             getDocs(qMujer).then( result =>{
                 const lista = result.docs.map(doc=>{
                     return {
@@ -36,7 +36,7 @@ export function ItemListContainer() {
                 })
                 setProductos(lista)
             })
-        }else if(categoryName=="accesorios"){
+        }else if(categoryName==="accesorios"){
             getDocs(qAccesorios).then( result =>{
                 const lista = result.docs.map(doc=>{
                     return {

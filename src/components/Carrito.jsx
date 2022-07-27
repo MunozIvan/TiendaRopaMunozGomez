@@ -1,12 +1,48 @@
 import React, {useContext} from "react"
 import {contexto} from "../context/Contexto"
 import {Link} from "react-router-dom"
+import {ItemCarrito} from "./ItemCarrito"
+import { db } from "../firebase/firebase"
+import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore"
+import { useState } from "react"
 
 
 
 function Carrito() {
-    const {carrito, precioCarrito} = useContext(contexto)
-    
+    const {carrito, precioCarrito,} = useContext(contexto)
+    const [idVenta, setIdVenta] = useState("")
+
+    function precioTotal(){
+        precioCarrito()
+    }
+
+
+    const DatosComprador = {//CREAR FORM Y GUARDAR LOS DATOS EN BASE DE DATOS        
+        nombre: "Pedro",
+        apellido:"Messi",
+        email: "futbol@gmail.com"
+    }
+
+    const finalizarCompra = () =>{
+        const ventasCollection = collection(db, "ventas")
+        addDoc(ventasCollection, {
+            DatosComprador,
+            items:carrito,
+            date: serverTimestamp(),
+            total: precioTotal()
+        }).then((result)=>{
+            setIdVenta(result.id)//GENERAR SWEETALERT CON IDVENTA Y LINK AL HOME
+        })
+        carrito.forEach(producto=>{
+            const updateCollection = doc(db,"productos",producto.id)
+            updateDoc(updateCollection,{
+                stock:(producto.stock-producto.cantidad)
+            })  
+        })
+
+    }
+
+
     if(carrito.length===0){
         return(
             <div id="canasta" className="carritoVacio">
@@ -30,35 +66,23 @@ function Carrito() {
         return(
             <section>
                 <div className="carritoConProductos">
-                    {carrito.map(producto=> //CREAR UN COMPONENTE PARA PRODUCTO EN CARRITO
-                    `
-                    <div id="${producto.tipo}${producto.id}" class="card productoCarrito">
-                        <div class="row g-0">
-                            <div class="col-5 col-sm-4">
-                                <img src="${producto.foto}" class="img-fluid w-100" alt=${producto.tipo}>
-                            </div>
-                            <div class="col-7 col-sm-8">
-                                <div class="card-body productoCarritoBody">
-                                    <h5 class="card-title productoCarritoPrecio">$${producto.precio}</h5>
-                                    <p class="card-text productoCarritoModelo">${producto.modelo}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    `   
+                    {carrito.map(producto=>
+                        <ItemCarrito key={producto.id} product={producto}/>
                     )}
                 </div> 
                 <div id="resumen">
                 
-                    <div class="card-header">
+                    <div className="card-header">
                         Resumen
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Total a pagar: {precioCarrito(carrito)} </h5>
-                        <p class="card-text">Cantidad de productos: {carrito.length}</p>
-                        <a href="#" class="btn btn-success">Comprar</a>
+                    <div className="card-body">
+                        <h5 className="card-title">Total a pagar: {precioTotal} </h5>
+                        <p className="card-text">Cantidad de productos: {carrito.length}</p>
+                        <button type="button" onClick={finalizarCompra} className="btn btn-outline-primary">
+                            Finalizar compra
+                        </button>
                     </div>
-                    <div class="card-footer text-muted">
+                    <div className="card-footer text-muted">
                         Tienda Muñoz S.A.
                     </div>
                     

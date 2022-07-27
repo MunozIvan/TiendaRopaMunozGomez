@@ -1,12 +1,12 @@
 import { ItemCount } from "./ItemCount"
-import React, {createContext} from 'react'
+import React, {useContext} from 'react'
 import { contexto } from "../context/Contexto"
 
 
 
 export function ItemDetail({productDetail}){
 
-    const {agregarCarrito} = createContext(contexto)
+    const {agregarCarrito} = useContext(contexto)
 
     function onAdd(contador){
         agregarCarrito(productDetail,contador)
@@ -23,7 +23,7 @@ export function ItemDetail({productDetail}){
                 <h4 className="card-title">{productDetail.modelo}</h4>
                 <h5>{productDetail.precio}</h5>
                 <p className="card-text">{productDetail.descripcion}</p>
-                <ItemCount product={productDetail} agregarAlCarrito={onAdd}/>
+                <ItemCount stock={productDetail.stock} onAdd={onAdd}/>
             </div>
                 
         </div>

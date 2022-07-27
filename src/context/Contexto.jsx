@@ -7,6 +7,7 @@ const {Provider} = contexto
 export function ComponenteContexto({children}){
 
     const [carrito, setCarrito ]= useState([])
+    const [total, setTotal ]= useState(0)
 
     function agregarCarrito(productDetail,cantidad){
         const nuevoProducto = {
@@ -19,8 +20,13 @@ export function ComponenteContexto({children}){
             const aux = [...carrito];
             aux[index].cantidad += cantidad;//aux[index].qty = aux[index].qty + qty;
             setCarrito(aux);
+            console.log("nuevo/s producto/s agregado/s")
+            console.log(carrito)
+
           }else{
             setCarrito([...carrito,nuevoProducto]);
+            console.log("primer/os producto/ss agregado/s")
+            console.log(carrito)
         }
     }
 
@@ -36,12 +42,13 @@ export function ComponenteContexto({children}){
         return false
     }
 
-    function precioCarrito(carrito){
+    function precioCarrito(){
         let precioTotal=0
-        carrito.array.forEach(producto => {
+        carrito.forEach(producto => {
             precioTotal= precioTotal + (producto.precio * producto.cantidad)
         })
-        return precioTotal
+        setTotal(precioTotal)
+        return total
     }
 
 
