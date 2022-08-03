@@ -9,24 +9,14 @@ export function ComponenteContexto({children}){
     const [carrito, setCarrito ]= useState([])
     const [total, setTotal ]= useState(0)
 
-    function agregarCarrito(productDetail,cantidad){
-        const nuevoProducto = {
-            ...productDetail,
-            cantidad
-        };
-        if(estaEnCarrito(productDetail.id)){
-            const productFind = carrito.find(productDetail => productDetail.id === nuevoProducto.id);
-            const index = carrito.indexOf(productFind);
-            const aux = [...carrito];
-            aux[index].cantidad += cantidad;//aux[index].qty = aux[index].qty + qty;
-            setCarrito(aux);
-            console.log("nuevo/s producto/s agregado/s")
+    function agregarCarrito(item) {
+        let list = [...carrito]
+        if(list.some(e => e.item.id === item.item.id)){
+            list.find(e => e.item.id === item.item.id).quantity += item.quantity
+            setCarrito(list)
             console.log(carrito)
-
-          }else{
-            setCarrito([...carrito,nuevoProducto]);
-            console.log("primer/os producto/ss agregado/s")
-            console.log(carrito)
+        }else{
+            setCarrito([...carrito, item])
         }
     }
 

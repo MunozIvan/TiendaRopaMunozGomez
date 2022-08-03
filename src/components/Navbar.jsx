@@ -3,12 +3,12 @@ import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/fi
 import { db } from "../firebase/firebase"
 
 function Navbar() {
-
+/*SUBIR PRODUCTOS DESDE EL JSON
   function subirProductos(){
     fetch("/products.json")
     .then(response => response.json())
     .then(data => {
-        const addCollection = doc(db,"productos")
+        const addCollection = collection(db,"productos")
         data.forEach((producto)=> {
         let {id,modelo, marca, precio, stock,foto,foto1,genero,tipo,ventas} = producto
         producto.id= id;
@@ -34,9 +34,11 @@ function Navbar() {
                 tipo: producto.tipo,
                 ventas: producto.ventas
             })
+
+            console.log("producto subido")
         })
     })
-}
+}*/
 
 
     return (
@@ -69,11 +71,12 @@ function Navbar() {
                     <Link  className="nav-link" to={"/acerca_de_nosotros"}>Acerca de nosotros</Link>
                   </h5>
                 </li> 
-                <li className="nav-item">{/* BORRAR LUEGO*/ }
+                {/*<li className="nav-item">
                       <button type="button" onClick={subirProductos} className="btn btn-outline-primary">
                             Subir Productos
                         </button>
-                </li>
+                </li>*/ }
+                
               </ul>
             </div>
           </div>

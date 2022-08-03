@@ -20,9 +20,7 @@ export function ItemCount({stock,onAdd}){
     }
 
     function sumarCarrito(){
-        if(contador>0){
-            onAdd(contador)    
-        }
+        onAdd(contador)    
         
     }
 

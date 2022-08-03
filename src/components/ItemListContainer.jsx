@@ -12,9 +12,9 @@ export function ItemListContainer() {
 
     useEffect(()=>{
         const productCollection = collection(db, "productos")
-        const qHombre = query(productCollection,where("genero", "==", "hombre"));
-        const qMujer = query(productCollection,where("genero", "==", "mujer"));
-        const qAccesorios = query(productCollection,where("tipo", "==", "accesorios"));
+        const qHombre = query(productCollection,where("genero", "==", "HOMBRE"));
+        const qMujer = query(productCollection,where("genero", "==", "MUJER"));
+        const qAccesorios = query(productCollection,where("tipo", "==", "ACCESORIOS"));
 
         if(categoryName==="hombre"){
             getDocs(qHombre).then( result =>{

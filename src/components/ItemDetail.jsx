@@ -8,9 +8,8 @@ export function ItemDetail({productDetail}){
 
     const {agregarCarrito} = useContext(contexto)
 
-    function onAdd(contador){
-        agregarCarrito(productDetail,contador)
-        console.log(`se agregaron ${contador} productos`)//CAMBIAR POR SWEETALERT2 O SIMILAR
+    const onAdd = (contador) =>{
+        agregarCarrito({item: productDetail, quantity: contador})
     }
 
     return(//MEJORAR LA VIEW DEL PRODUCTO
