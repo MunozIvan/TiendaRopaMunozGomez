@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom"
-import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore"
-import { db } from "../firebase/firebase"
+
 
 function Navbar() {
 /*SUBIR PRODUCTOS DESDE EL JSON

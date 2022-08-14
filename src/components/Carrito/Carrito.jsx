@@ -1,8 +1,8 @@
 import React, {useContext} from "react"
-import {contexto} from "../context/Contexto"
+import {contexto} from "../../context/Contexto"
 import {Link} from "react-router-dom"
 import {ItemCarrito} from "./ItemCarrito"
-import { db } from "../firebase/firebase"
+import { db } from "../../firebase/firebase"
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore"
 import { useState } from "react"
 

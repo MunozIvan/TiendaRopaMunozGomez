@@ -1,8 +1,14 @@
 import { ItemList } from "./ItemList"
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
-import { db } from "../firebase/firebase"
+import { db } from "../../firebase/firebase"
 import { getDocs, collection, query, where } from "firebase/firestore"
+import { BannerAccesorios } from "../Banners/BannerAccesorios"
+import { BannerMujer } from "../Banners/BannerMujer"
+import { BannerHombre } from "../Banners/BannerHombre"
+import { Banner } from "../Banners/Banner"
+import "./ItemList.css"
+
 
 
 export function ItemListContainer() {
@@ -106,6 +112,49 @@ export function ItemListContainer() {
          
     },[categoryName])
 
+
+
+    if(categoryName==="hombre"){
+        return(
+            <>
+                <BannerHombre/>
+                <section className="cuerpo">
+                    <ItemList productos={productos}/>
+                </section>
+            </>
+        )
+        
+    }else if(categoryName==="mujer"){
+        return(
+            <>
+                <BannerMujer/>
+                <section className="cuerpo">
+                    <ItemList productos={productos}/>
+                </section>
+            </>
+        )
+    }else if(categoryName==="accesorios"){
+        return(
+            <>
+                <BannerAccesorios/>
+                <section className="cuerpo">
+                    <ItemList productos={productos}/>
+                </section>
+            </>
+            
+        )
+    }else{
+        return(
+            <>
+                <Banner/>
+                <section className="cuerpo">
+                    <ItemList productos={productos}/>
+                </section>
+            </>
+        )
+    }
+
+    /*
     return (
 
         <section className="cuerpo">
@@ -114,7 +163,7 @@ export function ItemListContainer() {
 
         </section>
         
-    )
+    )*/
 }
 
 

@@ -1,0 +1,40 @@
+
+
+.accesorios{
+    padding: 20;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 82%;
+    transform: translate(-50%,-50%);
+    font-family: 'Aboreto', cursive;
+    color: whitesmoke;
+    font-size: 45px;
+
+}
+
+.mujer{
+    padding: 20;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 75%;
+    transform: translate(-50%,-50%);
+    font-family: 'Aboreto', cursive;
+    color: whitesmoke;
+    font-size: 45px;
+
+}
+
+.hombre{
+    padding: 20;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 82%;
+    transform: translate(-50%,-50%);
+    font-family: 'Aboreto', cursive;
+    color: whitesmoke;
+    font-size: 45px;
+
+}
+
+
+

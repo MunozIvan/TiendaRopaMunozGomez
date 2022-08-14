@@ -1,0 +1,14 @@
+
+.empresa{
+    display: flex;
+    flex-direction: row;
+    column-gap: 3vw;
+    margin-left: 3vw;
+    margin-top: 3vh;
+    margin-right: 3vw;
+    align-items: center;
+}
+
+.local{
+    width: 50vw;
+}
